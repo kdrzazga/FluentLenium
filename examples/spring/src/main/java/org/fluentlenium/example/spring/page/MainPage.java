@@ -21,7 +21,7 @@ public class MainPage extends FluentPage {
 
     public MainPage typeTextIn() {
         searchInput.fill().with("Something");
-        keyboard().basic().sendKeys(Keys.TAB);
+        keyboard().sendKeys(Keys.TAB);
         return this;
     }
 

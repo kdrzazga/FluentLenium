@@ -1,6 +1,6 @@
 Feature: basic
 
   Scenario: scenario1
-    Given Visit duckduckgo
-    When I search FluentLenium
-    Then Title contains FluentLenium
+    Given Visit duckduckgo search page
+    When I search FluentLenium term
+    Then Title contains FluentLenium term

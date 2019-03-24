@@ -6,7 +6,7 @@ import org.openqa.selenium.os.ExecutableFinder;
 
 public abstract class AbstractChromeTest extends FluentTest {
 
-    private static final String PATH_TO_CHROME_DRIVER = "C:\\drivers\\chromedriver.exe";
+    private static final String PATH_TO_CHROME_DRIVER = "C:\\webdrivers\\chromedriver.exe";
     private static final String CHROME_DRIVER_PROPERTY = "webdriver.chrome.driver";
 
     @BeforeClass

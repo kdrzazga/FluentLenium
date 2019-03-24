@@ -10,6 +10,7 @@ public class HomePage extends FluentPage {
 
     @FindBy(css = "#search_form_input_homepage")
     private FluentWebElement searchInput;
+
     @FindBy(css = "#search_button_homepage")
     private FluentWebElement searchButton;
 

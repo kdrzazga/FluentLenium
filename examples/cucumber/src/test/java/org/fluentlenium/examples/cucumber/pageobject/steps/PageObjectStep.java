@@ -9,7 +9,9 @@ import cucumber.api.java.en.When;
 import org.fluentlenium.adapter.cucumber.FluentCucumberTest;
 import org.fluentlenium.configuration.FluentConfiguration;
 import org.fluentlenium.core.annotation.Page;
+import org.fluentlenium.examples.cucumber.PropertiesReader;
 import org.fluentlenium.examples.cucumber.pageobject.page.HomePage;
+import org.junit.BeforeClass;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -19,20 +21,25 @@ public class PageObjectStep extends FluentCucumberTest {
     @Page
     private HomePage page;
 
-    @Given(value = "Visit duckduckgo")
+    public PageObjectStep(){
+        System.setProperty("webdriver.chrome.driver", new PropertiesReader().readProperty("webdriver.path"));
+    }
+
+    @Given(value = "Visit duckduckgo search page")
     public void step1() {
         goTo(page);
     }
 
-    @When(value = "I search FluentLenium")
+    @When(value = "I search FluentLenium term")
     public void step2() {
         page.find("FluentLenium");
     }
 
-    @Then(value = "Title contains FluentLenium")
+    @Then(value = "Title contains FluentLenium term")
     public void step3() {
         assertThat(page.window().title()).contains("FluentLenium");
     }
+
 
     @Before
     public void beforeScenario(Scenario scenario) {
